@@ -12,8 +12,7 @@ This project was developed as part of my Web Development Internship at Sqrock IT
 
 # 🚀 Live Demo
 
-🔗 Vercel Deployment Link:  
-(Add Your Task 2 Vercel Link Here)
+🔗 Vercel Deployment Link:  https://career-bridge-admin-dashboard.vercel.app/
 
 ---
 
