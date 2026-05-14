@@ -4,7 +4,10 @@ import { Link } from "react-router-dom"
 
 function Jobs() {
 
-  const [search, setSearch] = useState("")
+  const [search, setSearch] = useState("");
+
+  const [activeMenu, setActiveMenu] =
+    useState("dashboard");
 
   const customJobs =
     JSON.parse(localStorage.getItem("customJobs")) || []

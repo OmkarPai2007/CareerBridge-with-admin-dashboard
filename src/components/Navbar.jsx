@@ -3,6 +3,11 @@ import {
   useNavigate,
 } from "react-router-dom"
 
+import {
+  FaUserCircle,
+  FaChartPie,
+} from "react-icons/fa"
+
 function Navbar() {
 
   const navigate = useNavigate()
@@ -86,6 +91,26 @@ function Navbar() {
             >
               Applicants
             </NavLink>
+
+            {/* ADMIN DASHBOARD */}
+
+            <NavLink
+              to="/admin-dashboard"
+              className={({ isActive }) =>
+                isActive
+                  ? "active-link"
+                  : ""
+              }
+              style={{
+                display: "flex",
+                alignItems: "center",
+                gap: "8px",
+              }}
+            >
+              <FaChartPie />
+              Admin Dashboard
+            </NavLink>
+
           </>
 
         )}
@@ -105,21 +130,49 @@ function Navbar() {
 
         ) : (
 
-          <button
-            onClick={logout}
+          <div
             style={{
-              background: "#2563eb",
-              color: "white",
-              border: "none",
-              padding:
-                "10px 18px",
-              borderRadius: "8px",
-              cursor: "pointer",
-              fontWeight: "600",
+              display: "flex",
+              alignItems: "center",
+              gap: "18px",
+              background: "rgba(37,99,235,0.08)",
+              padding: "10px 18px",
+              borderRadius: "16px",
             }}
           >
-            Logout
-          </button>
+
+            <FaUserCircle
+              size={28}
+              color="#2563eb"
+            />
+
+            <span
+              style={{
+                fontWeight: "700",
+                color: "#0f172a",
+              }}
+            >
+              {user.name}
+            </span>
+
+            <button
+              onClick={logout}
+              style={{
+                background: "#2563eb",
+                color: "white",
+                border: "none",
+                padding:
+                  "10px 18px",
+                borderRadius: "10px",
+                cursor: "pointer",
+                fontWeight: "700",
+                transition: "0.3s",
+              }}
+            >
+              Logout
+            </button>
+
+          </div>
 
         )}
 

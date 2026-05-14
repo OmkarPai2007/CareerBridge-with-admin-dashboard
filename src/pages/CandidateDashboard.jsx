@@ -13,6 +13,22 @@ function CandidateDashboard() {
     (job) => job.userEmail === currentUser.email
   )
 
+  const customJobs =
+    JSON.parse(localStorage.getItem("customJobs")) || []
+
+  const validJobs = userJobs.filter((appliedJob) => {
+
+    // keep default jobs
+    if (appliedJob.defaultJob) {
+      return true
+    }
+
+    // keep only existing custom jobs
+    return customJobs.some(
+      (job) => job.id === appliedJob.id
+    )
+  })
+
   return (
     <div className="page">
 
@@ -34,7 +50,7 @@ function CandidateDashboard() {
           Applied Jobs
         </h2>
 
-        {userJobs.length === 0 ? (
+        {validJobs.length === 0 ? (
 
           <div className="empty-box">
 
@@ -54,7 +70,7 @@ function CandidateDashboard() {
 
           <div className="jobs-grid">
 
-            {userJobs.map((job, index) => (
+            {validJobs.map((job, index) => (
 
               <div className="job-card" key={index}>
 

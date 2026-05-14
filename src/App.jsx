@@ -5,6 +5,8 @@ import {
   useLocation,
 } from "react-router-dom"
 
+import AdminDashboard from "./pages/AdminDashboard";
+
 import { useEffect } from "react"
 
 import MainLayout from "./layouts/MainLayout"
@@ -55,6 +57,15 @@ function App() {
       <ScrollToTop />
 
       <Routes>
+
+        <Route
+          path="/admin-dashboard"
+          element={
+            <ProtectedRoute role="employer">
+              <AdminDashboard />
+            </ProtectedRoute>
+          }
+        />
 
         {/* MAIN WEBSITE ROUTES */}
 
