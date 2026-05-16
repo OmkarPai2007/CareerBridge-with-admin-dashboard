@@ -140,7 +140,7 @@ This project is hosted on Vercel.
 
 ### Clone Repository
 ```bash
-git clone https://github.com/your-github-username/careerbridge-admin-dashboard.git
+git clone https://github.com/your-github-username/CareerBridge-with-admin-dashboard.git
 ```
 
 ### Install Dependencies
